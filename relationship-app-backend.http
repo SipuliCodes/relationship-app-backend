@@ -1,6 +1,10 @@
 @relationship_app_backend_HostAddress = http://localhost:5043
 
-GET {{relationship_app_backend_HostAddress}}/weatherforecast/
+GET {{relationship_app_backend_HostAddress}}/test
 Accept: application/json
 
 ###
+
+GET {{relationship_app_backend_HostAddress}}/secret
+Accept: application/json
+Authorization: Bearer <token>

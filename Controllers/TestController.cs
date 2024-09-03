@@ -1,13 +1,14 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("[controller]")]
-public class TestController : Controller
+public class TestController : ControllerBase
 {
-    public TestController()
-    {
-    }
+  public TestController()
+  {
+  }
 
-    [HttpGet]
-    public ActionResult<string> Get() => "Test";
+  [HttpGet]
+  public ActionResult<string> Get() => "Test";
 }
