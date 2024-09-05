@@ -5,6 +5,24 @@ Accept: application/json
 
 ###
 
-GET {{relationship_app_backend_HostAddress}}/secret
+POST {{relationship_app_backend_HostAddress}}/calendar
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+    "CalendarEvent": {
+        "Id": 5,
+        "Title": "Team Building Activity",
+        "Start": "2024-09-15T10:00:00",
+        "End": "2024-09-15T12:00:00",
+        "Latitude": 37.7749,
+        "Longitude": -122.4194
+    },
+    "Calendar": "shared"
+}
+
+###
+
+GET {{relationship_app_backend_HostAddress}}/calendar?calendar=shared
 Accept: application/json
 Authorization: Bearer <token>
