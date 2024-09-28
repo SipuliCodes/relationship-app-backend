@@ -36,7 +36,14 @@ public class CalendarController : ControllerBase
 
         Console.WriteLine("Event Title: " + request.CalendarEvent.Title);
 
-        _calendarService.AddEvent(calendarEvent: request.CalendarEvent, calendar: request.Calendar);
-        return Ok();
+        try
+        {
+            var calendarEvent = _calendarService.AddEvent(calendarEvent: request.CalendarEvent, calendar: request.Calendar);
+            return Ok(calendarEvent);
+        }
+        catch (Exception ex) {
+            Console.WriteLine(ex);
+            return BadRequest(ex.Message);
+        }
     }
 }
